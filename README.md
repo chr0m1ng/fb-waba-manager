@@ -50,10 +50,10 @@ Retrieve a list of all `phone number objects` of your `waba`
 
 | Parameters | Type  |
 | ---------- | ----- |
-| waba_id    | `int` |
+| waba_id    | `str` |
 
 ```python
-waba_id = 1231434
+waba_id = '1231434'
 
 for pn in fwm.list_waba_phone_numbers(waba_id):
   print(pn)
@@ -74,9 +74,28 @@ for pn in fwm.list_waba_phone_numbers(waba_id):
 
 Retrieve a list of all `phone number objects` of all `wabas` of your `business`
 
+| Parameters | Type              |
+| ---------- | ----------------- |
+| wabas      | `list` (optional) |
+
 ```python
 
 for pn in fwm.list_business_phone_numbers():
+  print(pn)
+
+# You can pass a list of wabas
+# the objects must have at least the id key
+
+my_wabas = [
+  {
+    'id': '12342443'
+  },
+  {
+    'id': '56355465'
+  }
+]
+
+for pn in fwm.list_business_phone_numbers(my_wabas):
   print(pn)
 ```
 
