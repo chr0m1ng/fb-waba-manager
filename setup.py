@@ -10,13 +10,12 @@ setup(
     packages=find_packages('src'),
     package_dir={'': 'src'},
     include_package_data=True,
-    version='v0.0.1',
+    version='v0.0.2',
     license='MIT',
     description='Helper to handle with facebook\'s waba',
     author='Gabriel Rodrigues dos Santos',
     author_email='gabrielr@take.net',
     url='https://github.com/chr0m1ng/fb-waba-manager',
-    download_url='https://github.com/chr0m1ng/fb-waba-manager/archive/v0.0.1.tar.gz',
     keywords=['facebook', 'graph api', 'waba'],
     install_requires=[
         'requests'
