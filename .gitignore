@@ -106,3 +106,7 @@ venv.bak/
 # test file
 test.py
 t.py
+
+# Pipenv
+Pipfile
+Pipfile.lock

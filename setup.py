@@ -1,10 +1,15 @@
-from setuptools import setup
+from setuptools import setup, find_packages
+from os import path
 
+this_directory = path.abspath(path.dirname(__file__))
+with open(path.join(this_directory, 'README.md'), encoding='utf-8') as f:
+    long_description = f.read()
 
 setup(
     name='fb_waba_manager',
-    packages=['fb_waba_manager'],
-    package_dir={'fb_waba_manager': 'src/fb_waba_manager'},
+    packages=find_packages('src'),
+    package_dir={'': 'src'},
+    include_package_data=True,
     version='v0.0.1',
     license='MIT',
     description='Helper to handle with facebook\'s waba',
@@ -16,6 +21,8 @@ setup(
     install_requires=[
         'requests'
     ],
+    long_description=long_description,
+    long_description_content_type='text/markdown',
     classifiers=[
         # "3 - Alpha", "4 - Beta" or "5 - Production/Stable"
         'Development Status :: 4 - Beta',
