@@ -1,3 +1,3 @@
 class MethodsConstants:
-    
+
     GET = 'GET'

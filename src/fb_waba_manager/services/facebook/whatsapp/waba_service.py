@@ -12,10 +12,10 @@ class WabaService:
 
     def __init__(self, access_token):
         self.session = GraphApiFactory(access_token).get_session()
-    
+
     def has_to_paginate_response(self, fb_response):
         return PAGING_KEY in fb_response and NEXT_KEY in fb_response[PAGING_KEY]
-    
+
     def generate_fb_response(self, node, edge):
         # We will get a batch of data and yield it while we have to
         fb_response = self.session.get_object(node, edge)
@@ -26,13 +26,13 @@ class WabaService:
             has_to_paginate = self.has_to_paginate_response(fb_response)
             if has_to_paginate:
                 fb_response = self.session.get_next_object(fb_response)
-    
+
     def list_wabas(self, business_id):
         return self.generate_fb_response(business_id, FbConstants.WABAS_EDGE)
-    
+
     def list_phone_numbers(self, waba_id):
         return self.generate_fb_response(waba_id, FbConstants.PHONE_NUMBERS_EDGE)
-    
+
     def list_business_phone_numbers(self, business_id, wabas=None):
         '''
         params:
