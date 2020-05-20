@@ -16,9 +16,9 @@ class WabaService:
     def has_to_paginate_response(self, fb_response):
         return PAGING_KEY in fb_response and NEXT_KEY in fb_response[PAGING_KEY]
 
-    def generate_fb_response(self, node, edge):
+    def generate_fb_response(self, node, edge, fields=[]):
         # We will get a batch of data and yield it while we have to
-        fb_response = self.session.get_object(node, edge)
+        fb_response = self.session.get_object(node, edge, fields)
         has_to_paginate = True
         while has_to_paginate:
             for data in fb_response[DATA_KEY]:
@@ -31,7 +31,7 @@ class WabaService:
         return self.generate_fb_response(business_id, FbConstants.WABAS_EDGE)
 
     def list_phone_numbers(self, waba_id):
-        return self.generate_fb_response(waba_id, FbConstants.PHONE_NUMBERS_EDGE)
+        return self.generate_fb_response(waba_id, FbConstants.PHONE_NUMBERS_EDGE, fields=FbConstants.WABAS_FIELDS)
 
     def list_business_phone_numbers(self, business_id, wabas=None):
         '''
