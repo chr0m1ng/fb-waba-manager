@@ -49,7 +49,7 @@ for w in fwm.list_business_wabas():
 Retrieve a list of all `phone number objects` of your `waba`
 
 | Parameters | Type  |
-| ---------- | ----- |
+|------------|-------|
 | waba_id    | `str` |
 
 ```python
@@ -75,7 +75,7 @@ for pn in fwm.list_waba_phone_numbers(waba_id):
 Retrieve a list of all `phone number objects` of all `wabas` of your `business`
 
 | Parameters | Type              |
-| ---------- | ----------------- |
+|------------|-------------------|
 | wabas      | `list` (optional) |
 
 ```python
@@ -99,6 +99,38 @@ for pn in fwm.list_business_phone_numbers(my_wabas):
   print(pn)
 ```
 
+#### list_message_templates
+
+Retrieve a list of all `message templates objects` of your `waba`
+
+| Parameters | Type  |
+|------------|-------|
+| waba_id    | `str` |
+
+```python
+waba_id = '1231434'
+
+for mt in fwm.list_message_templates(waba_id):
+  print(mt)
+
+# Example of a phone number object:
+# {
+#     "name": "my_message_template_name",
+#     "components": [
+#         {
+#             "type": "BODY",
+#             "text": "Obrigado pelo contato, at\u00e9 a pr\u00f3xima.\\n\\n:)"
+#         }
+#     ],
+#     "language": "pt_BR",
+#     "status": "APPROVED",
+#     "category": "ACCOUNT_UPDATE",
+#     "id": "16453353"
+# }
+```
+
+---
+
 ### Reference
 
-The `waba`, `business`, `phone number` definition and properties can be found at [Facebook's oficial documentation](https://developers.facebook.com/docs/whatsapp/business-management-api)
+The `waba`, `business`, `phone number` and `message template` definition or properties can be found at [Facebook's oficial documentation](https://developers.facebook.com/docs/whatsapp/business-management-api)
