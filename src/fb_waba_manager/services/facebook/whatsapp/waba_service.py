@@ -47,3 +47,6 @@ class WabaService:
             for waba in self.list_wabas(business_id):
                 for pn in self.list_phone_numbers(waba[ID_KEY]):
                     yield pn
+
+    def list_message_templates(self, waba_id):
+        return self.generate_fb_response(waba_id, FbConstants.MESSAGE_TEMPLATES_EDGE)

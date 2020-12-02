@@ -16,3 +16,6 @@ class FbWabaManager:
 
     def list_business_phone_numbers(self, wabas=None):
         return self.waba_service.list_business_phone_numbers(self.business_id, wabas)
+
+    def list_message_templates(self, waba_id):
+        return self.waba_service.list_message_templates(waba_id)

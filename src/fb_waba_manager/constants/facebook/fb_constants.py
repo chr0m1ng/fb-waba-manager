@@ -15,3 +15,5 @@ class FbConstants:
     ]
 
     PHONE_NUMBERS_EDGE = 'phone_numbers'
+
+    MESSAGE_TEMPLATES_EDGE = 'message_templates'

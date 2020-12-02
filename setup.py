@@ -10,7 +10,7 @@ setup(
     packages=find_packages('src'),
     package_dir={'': 'src'},
     include_package_data=True,
-    version='v0.0.3',
+    version='v0.0.4',
     license='MIT',
     description='Helper to handle with facebook\'s waba',
     author='Gabriel Rodrigues dos Santos',
