@@ -10,7 +10,8 @@ class FbConstants:
         'status',
         'quality_rating',
         'id',
-        'display_phone_number'
+        'display_phone_number',
+        'thread_limit_per_day'
     ]
 
     PHONE_NUMBERS_EDGE = 'phone_numbers'
