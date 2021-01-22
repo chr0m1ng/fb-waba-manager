@@ -21,11 +21,18 @@ fwm = FbWabaManager(access_token, business_id)
 
 The following methods are provided:
 
+All methods accept the `notify_request` parameter, if the given value is `True`
+the method will always return the requested data and a `bool` indicating if a new request was made to the GraphAPI.
+
 Ps.: All methods are **generators**.
 
 #### list_business_wabas
 
 Retrieve a list of all `waba objects` of your `business`
+
+| Parameters      | Type              |
+|-----------------|-------------------|
+| notify_requests | `bool` (optional) |
 
 ```python
 for w in fwm.list_business_wabas():
@@ -48,9 +55,10 @@ for w in fwm.list_business_wabas():
 
 Retrieve a list of all `phone number objects` of your `waba`
 
-| Parameters | Type  |
-|------------|-------|
-| waba_id    | `str` |
+| Parameters      | Type              |
+|-----------------|-------------------|
+| waba_id         | `str`             |
+| notify_requests | `bool` (optional) |
 
 ```python
 waba_id = '1231434'
@@ -74,9 +82,10 @@ for pn in fwm.list_waba_phone_numbers(waba_id):
 
 Retrieve a list of all `phone number objects` of all `wabas` of your `business`
 
-| Parameters | Type              |
-|------------|-------------------|
-| wabas      | `list` (optional) |
+| Parameters      | Type              |
+|-----------------|-------------------|
+| wabas           | `list` (optional) |
+| notify_requests | `bool` (optional) |
 
 ```python
 
@@ -103,9 +112,10 @@ for pn in fwm.list_business_phone_numbers(my_wabas):
 
 Retrieve a list of all `message templates objects` of your `waba`
 
-| Parameters | Type  |
-|------------|-------|
-| waba_id    | `str` |
+| Parameters      | Type              |
+|-----------------|-------------------|
+| waba_id         | `str`             |
+| notify_requests | `bool` (optional) |
 
 ```python
 waba_id = '1231434'
