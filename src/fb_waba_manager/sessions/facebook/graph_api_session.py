@@ -11,7 +11,7 @@ class GraphApiSession:
     Provides a graph api requests session
     '''
 
-    def __init__(self, access_token, version='v6.0'):
+    def __init__(self, access_token, version='v9.0'):
         self.access_token = access_token
         self.base_url = f'{FbConstants.GRAPH_API_BASE_URL}/{version}'
         self.session = Session()
